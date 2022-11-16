@@ -9,7 +9,7 @@ class Equipo(models.Model):
     codigo: str = models.CharField(max_length=20, default='')
     ciudad: str = models.CharField(max_length=30, default='')
     escudo: image = models.ImageField()
-
+        
 
     def __str__(self) -> str:
         return self.nombre 

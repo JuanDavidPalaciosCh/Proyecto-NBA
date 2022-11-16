@@ -16,62 +16,69 @@
     <div class="card" style="width: 18rem">
 
 
-        <img src="{% static 'images/logos/imagen_equipo_0.png' %}" id="imagen-equipo-A">
+        <div class="contenedor-img">
 
+            <img src="{% static 'images/logos/imagen_equipo_0.png' %}" id="imagen-equipo-A">
+
+        </div>
 
         <div class="card-body">
-    
+
             <form action="/teamvsteam/" method="get">
                 {% csrf_token %}
-    
+
                 <select class="buscador-equipos" name="home" id="equipoA" onchange="change_img();">
                     {% for equipo in equipos %}
-                        
-                        <option value="{{ equipo.id_equipo }}">{{ equipo }}</option>
-                        
+
+                    <option value="{{ equipo.id_equipo }}">{{ equipo }}</option>
+
                     {% endfor %}
                 </select>
-        
+
         </div>
-    
+
     </div>
-    
-        
-    <div>    
+
+
+    <div>
         <button type="submit" class="btn btn-danger">VS</button>
     </div>
-    
-    
-    
+
+
+
     <div class="card" style="width: 18rem">
 
-        
-        <img src="{% static 'images/logos/imagen_equipo_40.png' %}" id="imagen-equipo-B" class="card-img-top">
-    
+
+        <div class="contenedor-img">
+
+            <img src="{% static 'images/logos/imagen_equipo_40.png' %}" id="imagen-equipo-B">
+
+        </div>
+
 
         <div class="card-body">
-                
-    
-                <select class="buscador-equipos" name="visitor" id="equipoB" onchange="change_imgB();">
-    
-                    {% for equipo in equipos %}
-                        
-                        <option value="{{ equipo.id_equipo }}" selected>{{ equipo }}</option>
-                        
-                    {% endfor %}
 
-                </select>
-    
-            
+
+            <select class="buscador-equipos" name="visitor" id="equipoB" onchange="change_imgB();">
+
+                {% for equipo in equipos %}
+
+                <option value="{{ equipo.id_equipo }}" selected>{{ equipo }}</option>
+
+                {% endfor %}
+
+            </select>
+
+
             </form>
-    
-        </div>
-    
-    </div>    
-    
-    </section>
-    
 
-    
+        </div>
+
+    </div>
+
+</section>
+
+
+
 
 {% endblock %}
