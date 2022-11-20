@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'NBA_stats',
     'calendario_juegos',
+    'equipos_info',
 ]
 
 MIDDLEWARE = [

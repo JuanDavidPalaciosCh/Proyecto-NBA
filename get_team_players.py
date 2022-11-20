@@ -1,13 +1,15 @@
 import os
 import django
-import datetime
-import requests
-from equipos_info.models import Jugador
-
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'NBA_project.settings')
 django.setup()
  
+import datetime
+import time
+import requests
+from equipos_info.models import Jugador
+
+
 url = "https://api-nba-v1.p.rapidapi.com/players"
 
 headers = {
@@ -28,12 +30,28 @@ for i in range(n):
 
     players = response_json["response"]
 
-    a = Jugador(
-        team_id=(i + 1),
-        name=players["firstName"],
-        lastname=players["lastName"],
-        position=players["position"],
-        number=players["jersey"]
-    )
+    for j in range(len(players)):
 
-    a.save()
+        try:
+
+            a = Jugador(
+                team_id=(i + 1),
+                name=players[j]["firstname"],
+                lastname=players[j]["lastname"],
+                position=players[j]["leagues"]["standard"]["pos"],
+                number=players[j]["leagues"]["standard"]["jersey"]
+            )
+
+        except:
+             a = Jugador(
+                team_id=(i + 1),
+                name=players[j]["firstname"],
+                lastname=players[j]["lastname"],
+                position='N/A'
+            )
+
+        a.save()
+
+        print(a.team_id)
+
+    time.sleep(10)

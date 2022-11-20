@@ -9,6 +9,36 @@
 
 
 {% block content %}
+<section class="banner contenido">
+
+    <div class="team">
+
+        <a href="?team_id={{team_id | add:-1}}">aaa</a>
+
+        <div class="card" style="width: 18rem">
 
 
+            <div class="contenedor-img">
+
+                <img src="/static/images/logos/imagen_equipo_{{team_id}}.png" id="imagen-equipo">
+
+            </div>
+
+            <div class="card-body">
+            
+                <h5 class="card-title">{{ equipo }}</h5>
+
+            </div>
+
+        </div>
+
+        <a href="?team_id={{team_id | add:1}}">aaa</a>
+    </div>
+
+    <div class="players">
+        {% for jugador in jugadores %}
+        <span>{{jugador}}</span>
+        {% endfor %}
+    </div>
+</section>
 {% endblock %}
