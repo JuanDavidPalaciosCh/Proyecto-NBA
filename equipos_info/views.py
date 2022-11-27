@@ -19,7 +19,7 @@ def equipos_info(request):
 
     jugadores = jugadores.order_by('number')
 
-    context = {'equipo' : team, 'team_id' : team_id, 'jugadores' : jugadores}
+    context = {'equipo' : team, 'team_id' : team_id, 'jugadores1' : jugadores[:len(jugadores) // 2], 'jugadores2' : jugadores[len(jugadores) // 2:]}
 
     return render(request, 'equipos_info/equipos_info.html', context)
 

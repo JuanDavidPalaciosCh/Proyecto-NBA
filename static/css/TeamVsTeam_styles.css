@@ -1,75 +1,125 @@
-.home{
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    height:100vh;
-    color: rgb(3, 3, 221);
-}
-.info{
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(255, 255, 255, 0.566);
-}
-.visitor{
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    height:100vh;
-    color:rgb(145, 0, 0);
-}
-.contenido .teamVsTeam{
+.teamVsTeam{
     display: flex;
     flex-direction: row;
 }
 
 .home{
-    width: 45%;
-    background:rgb(145, 0, 0) ;
-    float: left;
-    -webkit-transform: skew(20deg);
-    -moz-transform: skew(20deg);
-    -ms-transform: skew(20deg);
-    -o-transform: skew(20deg);
-    transform: skew(20deg);
+    width: 60%;
+    opacity: 80%;
+    background:rgb(145, 0, 0);
 }
-.info{
+
+.content{
+    position: relative;
+    text-align: center;
+    top:10%;
+    height: 50%;
+}
+
+.contenido-home{
+    position: relative;
+    width: 100%;
     height: 100vh;
-    width: 10%;
-    float:left;
-    -moz-transform: skew(20deg);
-    -ms-transform: skew(20deg);
-    -o-transform: skew(20deg);
-    transform: skew(20deg); 
+    margin: auto;
+}
+
+.info{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 60%;
+    background:rgb(192, 192, 192) ;
+    opacity: 80%;
+}
+
+.info h1{
+    text-align: center;
+    color: brown;
+}
+
+.info h4{
+    text-align: center;
 }
 
 .visitor{
-    width: 45%;
-    background-color: rgb(3, 3, 221);
-    float: left;
-    -moz-transform: skew(20deg);
-    -ms-transform: skew(20deg);
-    -o-transform: skew(20deg);
-    transform: skew(20deg);
+    width: 60%;
+    opacity: 80%;
+    background: rgb(3, 3, 221);
 }
 
-
-
-.contenido-home{
-    transform: skewX(-20deg);
-    font-size: x-large;
+.visitor-team{
+    color: white;
+    margin: 20px auto 15px auto;
 }
+
+.home-team{
+    color: white;
+    margin: 20px auto 15px auto;
+}
+
 .contenido-visitor{
-    transform: skewX(-20deg);
-    font-size: x-large;
-}
-
-.logo-home{
-    transform: translate(-100%, 100%);
     position: relative;
+    width: 100%;
+    height: 100vh;
+    margin: auto;
 }
 
 .logo-visitante{
-    transform: translate(110%, -100%);
-    position: relative;
+    width:40%;
+    height: 200px;
+    margin: 0px auto;
+}
+
+.logo-visitante img{
+    width: 100%;
+    height: 100%;
+}
+
+.logo-home{
+    width:40%;
+    height: 200px;
+    margin: 0px auto;
+}
+
+.logo-home img{
+    width: 100%;
+    height: 100%;
+}
+
+.logo-info{
+    position:relative;
+    height: 45%;
+    width: 40%;
+    left: 30%;
+}
+
+.estadisticas-home{
+    background:linear-gradient(90deg,rgb(184, 59, 59),rgb(105, 20, 20),rgb(56, 2, 2));
+    color: white;
+    width: 80%;
+    box-shadow: 20px 25px 45px rgba(0, 0, 0,0.5);
+    margin: 0px auto;
+}
+
+.estadisticas-home table{
+    color: white;
+}
+
+.estadisticas-visitante{
+    background: linear-gradient(90deg,rgb(99, 98, 187),rgb(11, 11, 126),rgb(7, 7, 109));
+    width: 80%;
+    box-shadow: 20px 25px 45px rgba(0, 0, 0,0.5);
+    margin: 0px auto;
+}
+
+.estadisticas-visitante table{
+    color: white;
+}
+
+
+.table td{
+    padding: 1px;
+    font-size: 90%;
+    width: 50%;
 }
