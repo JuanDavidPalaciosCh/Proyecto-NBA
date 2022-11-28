@@ -6,8 +6,8 @@
     color: rgb(3, 3, 221);
 }
 .info{
-    display:flex;
-    justify-content: center;
+    display:block;
+    justify-content:center;
     align-items: center;
     background-color: rgba(255, 255, 255, 0.566);
 }
@@ -52,8 +52,6 @@
     -o-transform: skew(20deg);
     transform: skew(20deg);
 }
-
-
 
 .contenido-home{
     transform: skewX(-20deg);

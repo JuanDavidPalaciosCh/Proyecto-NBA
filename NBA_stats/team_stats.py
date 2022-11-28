@@ -5,8 +5,8 @@ class Team_stats (object):
         
         self.games = stat["games"]
         self.fastBreakPoints = stat["fastBreakPoints"]
-        self.pointsInPaint = stat["pointsInPaint"]
-        self.biggestLead = stat["biggestLead"]
+        self.pointsInPaint = stat["pointsInPaint"] #inutil
+        self.biggestLead = stat["biggestLead"] 
         self.secondChancePoints = stat["secondChancePoints"]
         self.pointsOffTurnovers = stat["pointsOffTurnovers"]
         self.longestRun = stat["longestRun"]

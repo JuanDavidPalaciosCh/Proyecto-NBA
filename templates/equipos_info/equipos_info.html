@@ -13,7 +13,9 @@
 
     <div class="team">
 
-        <a href="?team_id={{team_id | add:-1}}">aaa</a>
+        <a href="?team_id={{team_id | add:-1}}">
+            <img src="/static/images/logos/arrow.png" class="arrow-left" id="arrow">
+        </a>
 
         <div class="card" style="width: 18rem">
 
@@ -32,13 +34,41 @@
 
         </div>
 
-        <a href="?team_id={{team_id | add:1}}">aaa</a>
+        <a href="?team_id={{team_id | add:1}}">
+            <img src="/static/images/logos/arrow.png" class="arrow-right" id="arrow">
+        </a>
     </div>
 
     <div class="players">
-        {% for jugador in jugadores %}
-        <span>{{jugador}}</span>
-        {% endfor %}
+        <div class="jugadores tabla1">
+            <table class="table table-bordered">
+                <th>Nombre jugador</th>
+                <th>Numero</th>
+                <th>Posición</th>
+                {% for jugador in jugadores1 %}
+                    <tr>
+                        <td>{{jugador}}</td>
+                        <td>{{jugador.number}}</td>
+                        <td>{{jugador.get_position}}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <div class="jugadores tabla2">
+            <table class="table table-bordered">
+                <th>Nombre jugador</th>
+                <th>Numero</th>
+                <th>Posición</th>
+                {% for jugador in jugadores2 %}
+                    <tr>
+                        <td>{{jugador}}</td>
+                        <td>{{jugador.number}}</td>
+                        <td>{{jugador.get_position}}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+        
     </div>
 </section>
 {% endblock %}
