@@ -10,35 +10,175 @@
 
 {% block content %}
 
-<section class"contenido">
+<section class="contenido">
     <div class="teamVsTeam">
         <div class="home">
+
             <div class="contenido-home">
-                <div class="logo-home">
-                    <img src="{{home_img}}" id="imagen-equipo-A"  class="card-img-top" height="220px"  width="200px">
+
+                <div class="content">
+
+                    <div class="home-team">
+                        <h4>{{home_name}}</h4>
+                        <div class="logo-home">
+                            <img src="{{home_img}}" id="imagen-equipo-A"  class="card-img-top" height="220px"  width="200px">
+                        </div>
+                    </div>
+
+                <div class="estadisticas-home">
+                        <table class="table table-bordered">
+                            <tr>
+                                <td>Juegos</td>
+                                <td>{{home_stats.games}}</td>
+                            </tr>
+                            <tr>
+                                <td>Puntos totales</td>
+                                <td>{{home_stats.points}}</td>
+                            </tr>
+                            <tr>
+                                <td>Fgm</td>
+                                <td>{{home_stats.fgm}}</td>
+                            </tr>
+                            <tr>
+                                <td>Fga</td>
+                                <td>{{home_stats.fga}}</td>
+                            </tr>
+                            <tr>
+                                <td>Fgp</td>
+                                <td>{{home_stats.fgp}}</td>
+                            </tr>
+                            <tr>
+                                <td>Ftm</td>
+                                <td>{{home_stats.ftm}}</td>
+                            </tr>
+                            <tr>
+                                <td>Fta</td>
+                                <td>{{home_stats.fta}}</td>
+                            </tr>
+                            <tr>
+                                <td>Ftp</td>
+                                <td>{{home_stats.ftp}}</td>
+                            </tr>
+                            <tr>
+                                <td>Tpm</td>
+                                <td>{{home_stats.tpm}}</td>
+                            </tr>
+                            <tr>
+                                <td>Tpa</td>
+                                <td>{{home_stats.tpa}}</td>
+                            </tr>
+                            <tr>
+                                <td>Ttp</td>
+                                <td>{{home_stats.tpp}}</td>
+                            </tr>
+                            <tr>
+                                <td>Asistencias</td>
+                                <td>{{home_stats.assists}}</td>
+                            </tr>
+                            <tr>
+                                <td>Robos</td>
+                                <td>{{home_stats.steals}}</td>
+                            </tr>
+                            <tr>
+                                <td>Bloqueos</td>
+                                <td>{{home_stats.blocks}}</td>
+                            </tr>
+                        </table>
                 </div>
+
+            </div> 
                 
             </div>
-            <div class="estadisticas-home">
-                    <p> </p>
-            </div>
+            
         </div>
         <div class="info">
-            <Span>Juegos</Span>
-            <Span>Puntos en contraataque</Span>
-            <span></span>
-        </div>
-        <div class="visitor">
-            <div class="contenido-visitor">
-                <div class="logo-visitante">
-
-                    <img src="{{visitor_img}}" id="imagen-equipo-B"   class="card-img-top" height="220px"   width="200px">
-
+        <div class="contenido-info">
+             <h1>GANADOR</h1>
+                <div class="logo-info">
+                    <img src="/static/images/logos/imagen_equipo_{{winner}}.png" id="imagen-equipo-A"  class="card-img-top"  >
                 </div>
                 
-                <div class="estadisticas-visitante">
-                    <p>Games: {{visitor_stats.games}}</p>
-                    <p>Numero de pases</p>
+                <div class= "resultados">
+                <h4>estadisticas:</h4>
+                <h4> {{home_percentage}}% / {{visitor_percentage}}%</h4>
+                </div>
+         </div>   
+        </div>
+        <div class="visitor">
+
+            <div class="contenido-visitor">
+
+                <div class="content">
+
+                    <div class="visitor-team">
+
+                        <h4>{{visitor_name}}</h4>
+                            <div class="logo-visitante">
+                                <img src="{{visitor_img}}" id="imagen-equipo-B"   class="card-img-top" height="220px"   width="200px">
+                            </div>
+                    </div>
+                    
+                    <div class="estadisticas-visitante">
+                        <table class="table table-bordered">
+                            <tr>
+                                <td>Juegos</td>
+                                <td>{{visitor_stats.games}}</td>
+                            </tr>
+                            <tr>
+                                <td>Puntos totales</td>
+                                <td>{{visitor_stats.points}}</td>
+                            </tr>
+                            <tr>
+                                <td>Fgm</td>
+                                <td>{{visitor_stats.fgm}}</td>
+                            </tr>
+                            <tr>
+                                <td>Fga</td>
+                                <td>{{visitor_stats.fga}}</td>
+                            </tr>
+                            <tr>
+                                <td>Fgp</td>
+                                <td>{{visitor_stats.fgp}}</td>
+                            </tr>
+                            <tr>
+                                <td>Ftm</td>
+                                <td>{{visitor_stats.ftm}}</td>
+                            </tr>
+                            <tr>
+                                <td>Fta</td>
+                                <td>{{visitor_stats.fta}}</td>
+                            </tr>
+                            <tr>
+                                <td>Ftp</td>
+                                <td>{{visitor_stats.ftp}}</td>
+                            </tr>
+                            <tr>
+                                <td>Tpm</td>
+                                <td>{{visitor_stats.tpm}}</td>
+                            </tr>
+                            <tr>
+                                <td>Tpa</td>
+                                <td>{{visitor_stats.tpa}}</td>
+                            </tr>
+                            <tr>
+                                <td>Ttp</td>
+                                <td>{{visitor_stats.tpp}}</td>
+                            </tr>
+                            <tr>
+                                <td>Asistencias</td>
+                                <td>{{visitor_stats.assists}}</td>
+                            </tr>
+                            <tr>
+                                <td>Robos</td>
+                                <td>{{visitor_stats.steals}}</td>
+                            </tr>
+                            <tr>
+                                <td>Bloqueos</td>
+                                <td>{{visitor_stats.blocks}}</td>
+                            </tr>
+                        </table>
+                    </div>
+
                 </div>
             </div>
         </div>
