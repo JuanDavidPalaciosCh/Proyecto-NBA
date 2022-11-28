@@ -11,7 +11,6 @@ class Jugador(models.Model):
     def __str__(self) -> str:
         return self.name + " " + self.lastname
 
-
     def get_position(self):
         try:
             positions = self.position.split("-")
