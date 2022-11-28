@@ -5,16 +5,17 @@ import datetime
 from NBA_stats.models import Equipo
 from NBA_stats.get_team_stats import get_stats
 from NBA_stats.get_winner import eval_winner
+from django.views.generic import TemplateView
 
 
-#@login_required
+@login_required
 def home(request):
     equipos = Equipo.objects.order_by('nombre')
     context = {'equipos' : equipos, 'id_equipo_1' : 0, 'id_equipo_2' : 40}
     return render(request, 'NBA_stats/home.html', context)
 
  
-#@login_required
+@login_required
 def team_vs_team(request):
     home = int(request.GET["home"])
     visitor = int(request.GET["visitor"])
@@ -55,3 +56,20 @@ def team_vs_team(request):
 def cerrar_sesion(request):
     logout(request)
     return redirect('/')
+
+
+class Error404View(TemplateView):
+    template_name = 'NBA_stats/404.html'
+
+
+class Error500View(TemplateView):
+    template_name = 'NBA_stats/500.html'
+
+    @classmethod
+    def as_error_view(cls):
+        v = cls.as_view()
+        def view(request):
+            r = v(request)
+            r.render()
+            return r
+        return view

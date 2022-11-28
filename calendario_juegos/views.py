@@ -7,7 +7,7 @@ from NBA_stats.models import Equipo
 from datetime import date
 
 
-#@login_required
+@login_required
 def calendario_juegos(request):
 
     equipos = Equipo.objects.order_by('nombre')
